@@ -1,0 +1,28 @@
+@use "mixins"as *;
+@use "colors"as *;
+
+footer {
+  ul {
+    padding: 2rem 1.5rem;
+    @include flex(space-between, center, row);
+
+    li {
+      text-align: center;
+
+      img {
+        width: 1.7rem;
+        height: 1.3rem;
+      }
+    }
+
+    li:first-child {
+      img {
+        width: 1.4rem;
+        height: 1.3rem;
+      }
+      p {
+        color:$hover-color;
+      }
+    }
+  }
+}

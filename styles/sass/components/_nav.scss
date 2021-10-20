@@ -1,0 +1,39 @@
+@use 'colors' as *;
+@use 'fonts' as *;
+@use 'mixins' as *;
+
+
+// don't show the checkbox
+.burger__toggle {
+  display: none;
+}
+
+.burger__toggle__label {
+  margin: 1.5em 0 0 0;
+  @include positions;
+
+}
+  
+.burger {
+  margin-top: 1.5rem;
+  text-align: left;
+  background-color: $background-color;
+  width: 100%;
+  display: none;
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      margin: 0 auto;
+    }
+      li {
+        font-weight: map-get($font-weight, "bold");
+        color: $text-color;
+      }
+}
+
+// creating a hamburger menu: when the nav is "checked" it displays the menus.
+.burger__toggle:checked ~ .burger {
+ display: block;
+}

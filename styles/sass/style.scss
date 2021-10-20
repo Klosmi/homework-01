@@ -1,0 +1,48 @@
+@use "components/index" as *;
+@use "components/fonts" as *;
+@use "sass:map";
+
+
+html {
+  background-color: $background-color;
+  color: $text-color;
+}
+.wrapper {
+width: 28rem;
+border: $text-colorlight .1rem solid;
+border-radius: 1.5rem;
+margin: .5rem auto 0 auto;
+}
+
+header {
+  padding: 0 1.5rem;
+  text-align: left;
+  z-index: 999;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  display: flex;
+  align-items: flex-end;
+  flex-direction: row-reverse;
+    .bell {
+      margin: 1.5rem 0.5rem 0 0;
+      @include positions();
+      right: 1.5rem;
+      color: white;
+    }
+}
+
+main {
+    padding: 0 1.5rem;
+  h1 {
+    color: $text-color;
+    font-size: 3rem;
+    margin: 4rem 0 0 0;
+  }
+  h2 {
+    color: $text-colorlight;
+    font-weight: map.get($font-weight, regular);
+    font-size: 1.5rem;
+    margin: 1rem 0 2.5rem 0;
+  }
+}

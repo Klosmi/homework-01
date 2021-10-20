@@ -1,0 +1,77 @@
+@use "fonts"as *;
+@use "mixins"as *;
+@use "sass:map";
+
+.activities {
+  h3 {
+    margin: 2.5rem 0 1rem 0;
+    font-size: 16px;
+  }
+}
+  .activity {
+    padding: 1rem 0;
+    border-bottom: black solid 1px;
+    display: grid;
+    grid-template-columns: minmax(auto, 3rem) 2fr minmax(6rem, auto);
+    grid-template-rows: 1fr 1.5em;
+    row-gap: 0.6em;
+    align-items: start;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: map-get($font-weight, "light");
+    
+    &__image {
+      grid-column: 1;
+      grid-row: 1;
+      img {
+        width: 2.5rem;
+        height: 2.5rem;
+        border-radius: 1rem;
+      }
+    }
+
+    &__name {
+      grid-column: 2;
+      grid-row: 1;
+      span{
+        color: rgba(255, 255, 255, 1);
+        font-weight: map-get($font-weight, "bold");
+      }
+    }
+
+    &__presence {
+      grid-column: 3;
+      grid-row: 1;
+      @include flex(center, center, row);
+      
+      p:nth-child(2) {
+        padding: 0 .5em;
+      }
+    }
+
+    &__commentator {
+      grid-column: 2;
+      grid-row: 2;
+      @include flex(start, center, row);
+
+      &__like {
+        @include flex(start, center, row);
+        padding: 0 0.5em 0 0;
+        img {
+          width: 2em;
+          height: 1.5em;
+          padding-right: 0.5em;
+        }
+      }
+
+      &__comment {
+        @include flex(start, center, row);
+        padding: 0 0.5em 0 1em;
+        img {
+          width: 2em;
+          height: 1.5em;
+          padding-right: 0.5em;
+        }
+      }
+    }
+  }
